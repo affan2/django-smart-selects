@@ -39,7 +39,7 @@ class ChainedSelect(Select):
             js = [JQUERY_URL]
         else:
             js = []
-        js.append('/static/js/smart_selects.js')
+        js.append(static('js/smart_selects.js'))
 
     def render(self, name, value, attrs=None, choices=()):
         if len(name.split('-')) > 1:  # formset
