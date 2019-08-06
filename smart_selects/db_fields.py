@@ -100,7 +100,7 @@ class ChainedManyToManyField(IntrospectiveFieldMixin, ManyToManyField):
             'verbose_name': 'verbose_name'
         }
 
-        for name, default in defaults.items():
+        for name, default in list(defaults.items()):
             value = getattr(self, name)
             kwarg_name = attr_to_kwarg_names[name]
 
@@ -216,7 +216,7 @@ class ChainedForeignKey(IntrospectiveFieldMixin, ForeignKey):
             'view_name': 'view_name',
         }
 
-        for name, default in defaults.items():
+        for name, default in list(defaults.items()):
             value = getattr(self, name)
             kwarg_name = attr_to_kwarg_names[name]
 
